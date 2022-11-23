@@ -75,7 +75,7 @@ function ByCategory(props) {
                 <h2>All posts:-</h2>
                 {ViewAllPost}
             </Container>
-            {!isLoggedIn && <Navigate to={"/"} replace={true} />}
+            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </div>
     )
 }

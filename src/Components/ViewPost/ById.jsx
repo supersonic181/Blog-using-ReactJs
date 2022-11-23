@@ -60,7 +60,7 @@ function ById(props) {
                 tagname={tagName}
                 tagslug={tagSlug}
                 createdate={date}
-                showmore={true}
+                showmore={false}
                 delete={del}
                 edit={edit}
             />
@@ -71,11 +71,11 @@ function ById(props) {
         <div>
             <Header />
             <Container>
-                <h2>All posts:-</h2>
+                <h2>Complete Post</h2>
                 {ViewAllPost}
             </Container>
 
-            {!isLoggedIn && <Navigate to={"/"} replace={true} />}
+            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </div>
     )
 }

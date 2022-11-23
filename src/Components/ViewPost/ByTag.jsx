@@ -75,7 +75,7 @@ function ByTag(props) {
                 {ViewAllPost}
             </Container>
 
-            {!isLoggedIn && <Navigate to={"/"} replace={true} />}
+            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </div>
     )
 }

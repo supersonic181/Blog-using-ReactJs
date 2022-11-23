@@ -51,7 +51,7 @@ function Login(props) {
                 </div>
             </Form>
                 
-            {isLoggedIn && <Navigate to={"/home"} replace={true} />}
+            {/* {isLoggedIn && <Navigate to={"/home"} replace={true} />} */}
         </div>
     )
 }

@@ -11,7 +11,8 @@ import { Navigate } from 'react-router-dom';
 function Home(props) {
     const [allPost, setAllPost] = React.useState([]);
     const [error, setError] = React.useState(false);
-    const { isLoggedIn } = useContext(AppContext);
+    // const { isLoggedIn } = useContext(AppContext);
+    // console.log(isLoggedIn);
 
     let adminPanel = false;
 
@@ -84,7 +85,7 @@ function Home(props) {
                 {ViewAllPost}
             </Container>
 
-            {!isLoggedIn && <Navigate to={"/"} replace={true} />}
+            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </>
     )
 }

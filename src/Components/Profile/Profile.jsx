@@ -10,7 +10,7 @@ function Profile(props) {
   const [profile, setProfile] = React.useState([]);
   const [error, setError] = React.useState(false);
   const [show, setShow] = React.useState(false);
-  const { isLoggedIn } = useContext(AppContext);
+  // const { isLoggedIn } = useContext(AppContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -41,7 +41,7 @@ function Profile(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, name, password } = e.target.elements;
-    console.log(email.value, name.value, password.value);
+
     updateUserProfile(email.value, name.value, password.value)
       .then((data) => {
         window.location.reload(true);
@@ -130,7 +130,7 @@ function Profile(props) {
         </Modal>
       </div>
       
-      {!isLoggedIn && <Navigate to={"/"} replace={true} />}
+      {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
     </>
   )
 }
