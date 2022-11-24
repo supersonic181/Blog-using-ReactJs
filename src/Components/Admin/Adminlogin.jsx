@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import { adminlogin } from '../../Services/admin';
 
 function Adminlogin() {
+  const [error, setError] = React.useState(false);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
