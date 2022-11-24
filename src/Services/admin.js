@@ -11,7 +11,7 @@ export const adminlogin = async (email, password) => {
         }
 
         const { data } = await axios.post(
-            "http://localhost:8000/api/auth/admin/login",
+            url + "/api/auth/admin/login",
             {
                 "email": email,
                 "password": password
@@ -35,7 +35,7 @@ export const addCategory = async (name, slug) => {
         }
 
         const { data } = await axios.post(
-            "http://localhost:8000/api/category/add",
+            url + "/api/category/add",
             {
                 "name": name,
                 "slug": slug
@@ -60,7 +60,7 @@ export const addTag = async (name, slug) => {
         }
 
         const { data } = await axios.post(
-            "http://localhost:8000/api/tag/add",
+            url + "/api/tag/add",
             {
                 "name": name,
                 "slug": slug
@@ -85,7 +85,7 @@ export const getAllAccess = async () => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/access/view-all",
+            url + "/api/access/view-all",
             config
         );
 
@@ -106,7 +106,7 @@ export const updateUserAccess = async (email, access) => {
         }
 
         const { data } = await axios.put(
-            "http://localhost:8000/api/access/update/user",
+            url + "/api/access/update/user",
             {
                 "email": email,
                 "access_level": access

@@ -8,7 +8,8 @@ import { AppContext } from '../Helper/AppContext';
 function Login(props) {
     const [error, setError] = React.useState(false);
 
-    const { setLogin,isLoggedIn } = useContext(AppContext);
+    // const { setLogin,isLoggedIn } = useContext(AppContext);
+    // const  [setLogin, isLoggedIn]  = React.useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,7 +17,8 @@ function Login(props) {
 
         login(email.value, password.value)
             .then((data) => {
-                setLogin(true);
+                window.location.href = "/home";
+                // setLogin(true);
             })
             .catch((err) => {
                 setError(err.message);
@@ -50,7 +52,7 @@ function Login(props) {
                     <a href='/signup'>New User? Sign Up</a>
                 </div>
             </Form>
-                
+
             {/* {isLoggedIn && <Navigate to={"/home"} replace={true} />} */}
         </div>
     )

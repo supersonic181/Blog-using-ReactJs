@@ -10,7 +10,7 @@ export const getCategory = async () => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/category/view-all",
+            url + "/api/category/view-all",
             config
         );
 
@@ -31,7 +31,7 @@ export const getTag = async () => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/tag/view-all",
+            url + "/api/tag/view-all",
             config
         );
 
@@ -42,7 +42,7 @@ export const getTag = async () => {
     }
 }
 
-export const createPost = async(title, body, category, tag) => {
+export const createPost = async (title, body, category, tag) => {
     try {
         const config = {
             headers: {
@@ -52,12 +52,12 @@ export const createPost = async(title, body, category, tag) => {
         }
 
         const { data } = await axios.post(
-            "http://localhost:8000/api/post/add",{
-                "title": title,
-                "body": body,
-                "category_id": category,
-                "tags": tag
-            },
+            url + "/api/post/add", {
+            "title": title,
+            "body": body,
+            "category_id": category,
+            "tags": tag
+        },
             config
         );
 
@@ -78,7 +78,7 @@ export const getAllPost = async () => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/post/view-all",
+            url + "/api/post/view-all",
             config
         );
 
@@ -99,7 +99,7 @@ export const getAllPostByCategory = async (slug) => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/post/category/"+slug,
+            url + "/api/post/category/" + slug,
             config
         );
 
@@ -120,7 +120,7 @@ export const getAllPostByTag = async (slug) => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/post/tag/"+slug,
+            url + "/api/post/tag/" + slug,
             config
         );
 
@@ -141,7 +141,7 @@ export const getAllPostByID = async (ID) => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/post/"+ID,
+            url + "/api/post/" + ID,
             config
         );
 
@@ -162,7 +162,7 @@ export const getAllUserPost = async () => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/post/author/view-all",
+            url + "/api/post/author/view-all",
             config
         );
 
@@ -183,7 +183,7 @@ export const deletePostById = async (id) => {
         }
 
         const { data } = await axios.delete(
-            "http://localhost:8000/api/post/"+id,
+            url + "/api/post/" + id,
             config
         );
 
@@ -194,7 +194,7 @@ export const deletePostById = async (id) => {
     }
 }
 
-export const updatePost = async(id, title, body, category, tag) => {
+export const updatePost = async (id, title, body, category, tag) => {
     try {
         const config = {
             headers: {
@@ -204,12 +204,12 @@ export const updatePost = async(id, title, body, category, tag) => {
         }
 
         const { data } = await axios.put(
-            "http://localhost:8000/api/post/"+id,{
-                "title": title,
-                "body": body,
-                "category_id": category,
-                "tags": tag
-            },
+            url + "/api/post/" + id, {
+            "title": title,
+            "body": body,
+            "category_id": category,
+            "tags": tag
+        },
             config
         );
 

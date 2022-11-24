@@ -17,20 +17,22 @@ import { ProtectedRoute } from "./Components/ProtectedRoute/ProtectedRoute";
 import Cookies from "js-cookie";
 
 function App() {
-  const [isLoggedIn, setLogin] = React.useState(null);
+
+  console.log(process.env.REACT_APP_NAME);
+  // const [isLoggedIn, setLogin] = React.useState(null);
   const [error, setError] = React.useState();
   const [access, setAccess] = React.useState('User');
 
 
-  const jwt = Cookies.get('jwt');
-  React.useEffect(() => {
-    if (jwt) {
-      setLogin(true);
-    }
-    else {
-      setLogin(false);
-    }
-  }, [jwt]);
+  // const jwt = Cookies.get('jwt');
+  // React.useEffect(() => {
+  //   if (jwt) {
+  //     setLogin(true);
+  //   }
+  //   else {
+  //     setLogin(false);
+  //   }
+  // }, [jwt]);
 
   React.useEffect(() => {
     async function getUserAccess() {
@@ -41,8 +43,8 @@ function App() {
             setAccess(data);
           }
         })
-        .catch(err => {
-          setError(error);
+        .catch((err) => {
+          setError(err);
         })
       return () => mounted = false;
     }
@@ -54,8 +56,8 @@ function App() {
     // <AppContext.Provider value={{ isLoggedIn, setLogin }}>
     <BrowserRouter>
       <Routes>
-        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/admin/login" element={<Adminlogin />} />
 
         {/* <Route element={<ProtectedRoute />}> */}

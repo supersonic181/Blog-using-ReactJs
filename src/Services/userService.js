@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const url = process.env.REACT_APP_URL;
+
 export const login = async (email, password) => {
     try {
         const config = {
@@ -10,7 +12,7 @@ export const login = async (email, password) => {
         }
 
         const { data } = await axios.post(
-            "http://localhost:8000/api/auth/login",
+            url + "/api/auth/login",
             {
                 "email": email,
                 "password": password
@@ -35,7 +37,7 @@ export const register = async (email, name, password) => {
         }
 
         const { data } = await axios.post(
-            "http://localhost:8000/api/auth/register",
+            url + "/api/auth/register",
             {
                 "email": email,
                 "name": name,
@@ -62,7 +64,7 @@ export const logout = async () => {
         }
 
         const { data } = await axios.delete(
-            "http://localhost:8000/api/auth/logout",
+            url + "/api/auth/logout",
             config
         );
 
@@ -83,7 +85,7 @@ export const getAccessLevel = async () => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/user/access",
+            url + "/api/user/access",
             config
         );
 
@@ -104,7 +106,7 @@ export const getUserProfile = async () => {
         }
 
         const { data } = await axios.get(
-            "http://localhost:8000/api/user/profile",
+            url + "/api/user/profile",
             config
         );
 
@@ -125,7 +127,7 @@ export const updateUserProfile = async (email, name, password) => {
         }
 
         const { data } = await axios.put(
-            "http://localhost:8000/api/user/profile",
+            url + "/api/user/profile",
             {
                 "email": email,
                 "name": name,

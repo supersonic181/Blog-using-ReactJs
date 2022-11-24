@@ -4,21 +4,19 @@ import { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 
 function Logout() {
-    const { isLoggedIn, setLogin } = useContext(AppContext);
+    // const { isLoggedIn, setLogin } = useContext(AppContext);
     const exit = () => {
         logout()
             .then((data) => {
                 if (data.success) {
-                    setLogin(false);
+                    window.location.href = "/";
+                    // setLogin(false);
                 }
             })
             .catch((err) => console.log(err));
     }
     return (
-        <>
-            {exit}
-            {!isLoggedIn && <Navigate to={"/"} replace={true} />}
-        </>
+        exit()
     )
 }
 
