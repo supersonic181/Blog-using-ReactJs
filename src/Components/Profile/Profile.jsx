@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import Navbar from '../Navbar/Header';
 import Adminheader from '../Admin/Adminheader';
-import { AppContext } from '../Helper/AppContext';
-import { Navigate } from 'react-router-dom'
 import { Container, Stack, Modal, Col, Form, Row, Button } from 'react-bootstrap';
 import { getUserProfile, updateUserProfile } from '../../Services/userService';
 
@@ -10,7 +8,6 @@ function Profile(props) {
   const [profile, setProfile] = React.useState([]);
   const [error, setError] = React.useState(false);
   const [show, setShow] = React.useState(false);
-  // const { isLoggedIn } = useContext(AppContext);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -129,8 +126,6 @@ function Profile(props) {
           </Modal.Footer>
         </Modal>
       </div>
-      
-      {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
     </>
   )
 }

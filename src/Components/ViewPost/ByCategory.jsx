@@ -4,14 +4,10 @@ import { useParams } from 'react-router-dom';
 import { getAllPostByCategory } from '../../Services/postServices';
 import Header from '../Navbar/Header';
 import Viewpost from './Viewpost';
-import { AppContext } from '../Helper/AppContext';
-import { Navigate } from 'react-router-dom'
 
 function ByCategory(props) {
     const [allPost, setAllPost] = React.useState([]);
     const [error, setError] = React.useState(false);
-
-    const { isLoggedIn } = useContext(AppContext);
 
     const slug = useParams();
 
@@ -75,7 +71,6 @@ function ByCategory(props) {
                 <h2>All posts:-</h2>
                 {ViewAllPost}
             </Container>
-            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </div>
     )
 }

@@ -1,18 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Navbar from '../Navbar/Header'
 import CreatePost from '../CreatePost/CreatePost'
 import { Container } from 'react-bootstrap'
 import Viewpost from '../ViewPost/Viewpost'
 import { getAllPost } from '../../Services/postServices'
 import Adminheader from '../Admin/Adminheader'
-import { AppContext } from '../Helper/AppContext';
-import { Navigate } from 'react-router-dom';
 
 function Home(props) {
     const [allPost, setAllPost] = React.useState([]);
     const [error, setError] = React.useState(false);
-    // const { isLoggedIn } = useContext(AppContext);
-    // console.log(isLoggedIn);
 
     let adminPanel = false;
 
@@ -84,8 +80,6 @@ function Home(props) {
                 <h1>All Blogs</h1>
                 {ViewAllPost}
             </Container>
-
-            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </>
     )
 }

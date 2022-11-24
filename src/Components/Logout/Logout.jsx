@@ -1,16 +1,11 @@
 import { logout } from '../../Services/userService'
-import { AppContext } from '../Helper/AppContext';
-import { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
 
 function Logout() {
-    // const { isLoggedIn, setLogin } = useContext(AppContext);
     const exit = () => {
         logout()
             .then((data) => {
                 if (data.success) {
                     window.location.href = "/";
-                    // setLogin(false);
                 }
             })
             .catch((err) => console.log(err));

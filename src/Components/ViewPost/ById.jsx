@@ -1,16 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { getAllPostByID } from '../../Services/postServices';
 import Header from '../Navbar/Header';
 import Viewpost from './Viewpost';
-import { AppContext } from '../Helper/AppContext';
-import { Navigate } from 'react-router-dom'
 
 function ById(props) {
     const [allPost, setAllPost] = React.useState([]);
     const [error, setError] = React.useState(false);
-    const { isLoggedIn } = useContext(AppContext);
 
     const post = useParams();
 
@@ -74,8 +71,6 @@ function ById(props) {
                 <h2>Complete Post</h2>
                 {ViewAllPost}
             </Container>
-
-            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </div>
     )
 }

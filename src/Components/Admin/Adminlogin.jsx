@@ -1,13 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { adminlogin } from '../../Services/admin';
-import { AppContext } from '../Helper/AppContext';
-import { Navigate } from 'react-router-dom';
 
 function Adminlogin() {
-    const [error, setError] = React.useState(false);
-    const { isLoggedIn, setLogin } = useContext(AppContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,7 +11,7 @@ function Adminlogin() {
 
         adminlogin(email.value, password.value)
             .then((data) => {
-                setLogin(true);
+                window.location.href = "/home";
             })
             .catch((err) => {
                 setError(err.message);
@@ -44,7 +40,6 @@ function Adminlogin() {
                     </Button>
                 </div>
             </Form>
-            {/* {isLoggedIn && <Navigate to={"/home"} replace={true} />} */}
         </div>
     )
 }

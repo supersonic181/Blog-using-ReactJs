@@ -1,15 +1,10 @@
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Navigate } from 'react-router-dom';
 import { login } from '../../Services/userService';
-import { AppContext } from '../Helper/AppContext';
 
-function Login(props) {
+function Login() {
     const [error, setError] = React.useState(false);
-
-    // const { setLogin,isLoggedIn } = useContext(AppContext);
-    // const  [setLogin, isLoggedIn]  = React.useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +13,6 @@ function Login(props) {
         login(email.value, password.value)
             .then((data) => {
                 window.location.href = "/home";
-                // setLogin(true);
             })
             .catch((err) => {
                 setError(err.message);
@@ -52,8 +46,6 @@ function Login(props) {
                     <a href='/signup'>New User? Sign Up</a>
                 </div>
             </Form>
-
-            {/* {isLoggedIn && <Navigate to={"/home"} replace={true} />} */}
         </div>
     )
 }

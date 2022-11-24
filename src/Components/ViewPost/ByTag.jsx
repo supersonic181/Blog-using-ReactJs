@@ -1,16 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { getAllPostByTag } from '../../Services/postServices';
 import Header from '../Navbar/Header';
 import Viewpost from './Viewpost';
-import { AppContext } from '../Helper/AppContext';
-import { Navigate } from 'react-router-dom'
+
 
 function ByTag(props) {
     const [allPost, setAllPost] = React.useState([]);
     const [error, setError] = React.useState(false);
-    const { isLoggedIn } = useContext(AppContext);
 
     const slug = useParams();
 
@@ -74,8 +72,6 @@ function ByTag(props) {
                 <h2>All posts:-</h2>
                 {ViewAllPost}
             </Container>
-
-            {/* {!isLoggedIn && <Navigate to={"/"} replace={true} />} */}
         </div>
     )
 }
